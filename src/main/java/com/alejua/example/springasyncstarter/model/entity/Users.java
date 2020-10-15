@@ -1,16 +1,15 @@
-package com.alejua.example.springasyncstarter;
+package com.alejua.example.springasyncstarter.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.Table;
-
-//@Table(name = "users")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class Users {
 	@Id
 	private Long id;

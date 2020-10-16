@@ -6,6 +6,7 @@ import com.alejua.example.springasyncstarter.repository.UserRepositoryRx;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.stereotype.Service;
@@ -13,11 +14,13 @@ import reactor.core.publisher.Flux;
 
 @Service
 @Log4j2
-@RequiredArgsConstructor
 public class SaludoService {
 
-    private final LettuceConnectionFactory lettuceConnectionFactory;
-    private final @NonNull UserRepositoryRx userRepositoryRx;
+    @Autowired
+    LettuceConnectionFactory lettuceConnectionFactory;
+
+    @Autowired
+    UserRepositoryRx userRepositoryRx;
 
     public SaludoDTO getSaludo(String name) {
         log.info("SaludoService::getSaludo");

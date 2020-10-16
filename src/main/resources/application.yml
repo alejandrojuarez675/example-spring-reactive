@@ -1,7 +1,7 @@
 spring:
   # Database
   r2dbc:
-    url: r2dbc:postgresql://172.17.0.2:5432/postgres?schema=techwriting
+    url: r2dbc:postgresql://localhost:5432/postgres?schema=techwriting
     username: postgres
     password: postgres
   # JPA properties
